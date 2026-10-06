@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --navy: #02092e;
+      --blue: #202d68;
+      --aqua: #00e7e5;
+      --light-aqua: #68cdd0;
+      --card: #0d172c;
+      --button: #4d5db2;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: var(--light-aqua);
+      color: #fff;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+    }
+
+    .site-header {
+      height: 117px;
+      background: var(--navy);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      width: 930px;
+      max-width: calc(100% - 48px);
+      height: 100%;
+      margin: auto;
+    }
+
+    .nav a {
+      color: var(--aqua);
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 39px;
+    }
+
+    .nav-links .active { color: #fff; }
+
+    .chevron {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin: 0 0 3px 9px;
+      border-right: 1px solid var(--aqua);
+      border-bottom: 1px solid var(--aqua);
+      transform: rotate(45deg);
+    }
+
+    .get-started {
+      margin-left: auto;
+      padding: 15px 14px;
+      min-width: 117px;
+      text-align: center;
+      border-radius: 28px;
+      background: #16d8dc;
+      color: #12305f !important;
+      box-shadow: 0 19px 28px rgba(228, 86, 67, .2);
+    }
+
+    .pricing-hero {
+      position: relative;
+      min-height: 578px;
+      padding-top: 89px;
+      background: var(--blue);
+    }
+
+    .intro { text-align: center; }
+
+    .intro h1 {
+      margin: 0 0 10px;
+      color: var(--aqua);
+      font-size: 32px;
+      line-height: 1.2;
+    }
+
+    .intro p {
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+
+    .plans {
+      position: absolute;
+      top: 318px;
+      left: 50%;
+      display: flex;
+      align-items: flex-start;
+      width: 882px;
+      transform: translateX(-50%);
+    }
+
+    .calculator {
+      width: 400px;
+      height: 385px;
+      margin-top: 49px;
+      padding: 62px 23px 25px;
+      border-radius: 6px;
+      background: var(--card);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, .3);
+      text-align: center;
+    }
+
+    .calculator h2 {
+      width: 240px;
+      margin: 0 auto 47px;
+      color: var(--aqua);
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+
+    .employee-count {
+      display: inline-block;
+      margin-bottom: 39px;
+      padding: 0 0 8px;
+      border-bottom: 1px solid #fff;
+      color: var(--aqua);
+      font-size: 34px;
+      line-height: 34px;
+    }
+
+    .range-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--aqua);
+      font-size: 16px;
+    }
+
+    input[type="range"] {
+      width: 262px;
+      height: 4px;
+      margin: 0;
+      accent-color: #c9c9c9;
+    }
+
+    .note {
+      margin-top: 42px;
+      color: var(--aqua);
+      font-size: 12px;
+    }
+
+    .plan-card {
+      width: 479px;
+      height: 482px;
+      padding: 101px 20px 25px;
+      border-radius: 6px;
+      background: var(--light-aqua);
+      color: #0d172c;
+      box-shadow: 0 7px 12px rgba(0, 0, 0, .14);
+      text-align: center;
+    }
+
+    .price {
+      margin-bottom: 50px;
+      font-size: 16px;
+    }
+
+    .price strong { font-size: 34px; }
+
+    .included {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      margin-bottom: 42px;
+      font-size: 16px;
+    }
+
+    .included::before,
+    .included::after {
+      content: "";
+      flex: 1;
+      height: 2px;
+      background: #fff;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 45px;
+      width: 300px;
+      margin: 0 auto 33px;
+      text-align: left;
+      font: 13px Arial, sans-serif;
+    }
+
+    .feature { position: relative; white-space: nowrap; }
+
+    .check {
+      display: inline-block;
+      width: 11px;
+      height: 19px;
+      margin-right: 8px;
+      border-right: 2px solid #3d5ec5;
+      border-bottom: 2px solid #3d5ec5;
+      transform: rotate(40deg);
+      vertical-align: -2px;
+    }
+
+    .contact {
+      display: block;
+      width: 263px;
+      margin: 0 auto;
+      padding: 12px;
+      border-radius: 5px;
+      background: var(--button);
+      color: var(--aqua);
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    @media (max-width: 920px) {
+      .pricing-hero { min-height: 1030px; }
+      .plans { top: 310px; width: min(479px, calc(100% - 30px)); flex-direction: column; }
+      .calculator, .plan-card { width: 100%; margin: 0 0 20px; }
+    }
+
+    @media (max-width: 660px) {
+      .nav-links { gap: 14px; }
+      .nav-links a:nth-child(2), .nav-links a:nth-child(3) { display: none; }
+      .pricing-hero { padding-inline: 16px; }
+      .included { gap: 25px; }
+      .features { width: 270px; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav-links">
+        <a href="#">Our Products <span class="chevron"></span></a>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a class="active" href="#">Pricing</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <a class="get-started" href="#">Get Started</a>
+    </nav>
+  </header>
+
+  <main class="pricing-hero">
+    <section class="intro">
+      <h1>Pricing</h1>
+      <p>Our affordable pricing scales with your business. We don’t lock our features<br>behind expensive plans. You get all the features on every plan.</p>
+    </section>
+
+    <section class="plans">
+      <article class="calculator">
+        <h2>How Many employee &amp;<br>Customer Do You Have?</h2>
+        <div class="employee-count" id="employeeCount">5,000</div>
+        <div class="range-row">
+          <span>1000</span>
+          <input id="employees" type="range" min="1000" max="100000" step="1000" value="50000" aria-label="Number of employees and customers">
+          <span>100k+</span>
+        </div>
+        <p class="note">If you have more than 100k subscribers, get in touch.</p>
+      </article>
+
+      <article class="plan-card">
+        <div class="price"><strong>$5</strong> per employee / month</div>
+        <div class="included">All Plans include</div>
+        <div class="features">
+          <span class="feature"><i class="check"></i>Connect</span>
+          <span class="feature"><i class="check"></i>Communicate</span>
+          <span class="feature"><i class="check"></i>Engage</span>
+          <span class="feature"><i class="check"></i>Customer Management</span>
+        </div>
+        <a class="contact" href="#">Get In Touch</a>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const range = document.getElementById('employees');
+    const count = document.getElementById('employeeCount');
+    range.addEventListener('input', () => {
+      count.textContent = Number(range.value).toLocaleString();
+    });
+  </script>
+</body>
+</html>

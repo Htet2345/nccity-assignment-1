@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beginner Survey Form</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: #304df3;
+      color: #070713;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 29px;
+    }
+
+    .survey {
+      width: min(755px, calc(100% - 24px));
+      min-height: 100vh;
+      margin: 10px auto 0;
+      padding: 11px 24px 26px;
+      background: #7183c5;
+      border: 2px solid #278cd0;
+      border-bottom: 0;
+      border-radius: 12px 12px 0 0;
+      box-shadow: 0 0 7px rgba(13, 90, 187, .8);
+    }
+
+    h1 {
+      margin: 3px 0 25px;
+      text-align: center;
+      font-size: 38px;
+      line-height: 1.2;
+    }
+
+    fieldset {
+      margin: 0 0 1px;
+      padding: 13px 24px 13px;
+      border: 2px solid #22b9db;
+      border-radius: 7px;
+    }
+
+    legend { padding: 0; font-size: 31px; }
+
+    .row {
+      display: flex;
+      align-items: center;
+      min-height: 52px;
+      gap: 15px;
+    }
+
+    .row label { flex: 0 0 auto; }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      height: 34px;
+      padding: 4px 25px;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      background: #fff;
+      color: #222;
+      font: 16px "Courier New", monospace;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, .12);
+    }
+
+    #name { width: 231px; }
+    #address { width: 232px; }
+    #email { width: 231px; }
+    #number { width: 232px; }
+
+    input::placeholder, textarea::placeholder { color: #777; opacity: 1; }
+
+    .gender-title { margin: 4px 0 3px; }
+
+    .choice {
+      display: flex;
+      align-items: center;
+      height: 36px;
+      gap: 17px;
+    }
+
+    .choice input {
+      width: 15px;
+      height: 15px;
+      margin: 0;
+      accent-color: #1685c6;
+    }
+
+    .additional { padding: 12px 24px 13px; }
+
+    .additional label {
+      display: block;
+      margin: 0 0 1px;
+      line-height: 1.25;
+    }
+
+    textarea {
+      display: block;
+      width: 100%;
+      height: 138px;
+      padding: 13px;
+      resize: both;
+      border: 1px solid #999;
+      border-radius: 7px;
+      font: 18px "Courier New", monospace;
+    }
+
+    button {
+      display: block;
+      margin: 11px auto 0;
+      padding: 7px 20px;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      background: #f3f3f3;
+      color: #111;
+      font: 14px "Courier New", monospace;
+      cursor: pointer;
+    }
+
+    @media (max-width: 620px) {
+      body { font-size: 21px; }
+      .survey { padding-inline: 12px; }
+      h1 { font-size: 28px; }
+      legend { font-size: 24px; }
+      fieldset { padding-inline: 14px; }
+      .row { align-items: flex-start; flex-direction: column; gap: 3px; margin-bottom: 10px; }
+      .row input { width: 100% !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="survey">
+    <h1>Beginner Survey Form</h1>
+    <form>
+      <fieldset>
+        <legend>Personal Details</legend>
+        <div class="row"><label for="name">Name:</label><input id="name" type="text" placeholder="Enter your name"></div>
+        <div class="row"><label for="address">Address:</label><input id="address" type="text" placeholder="Enter your Address"></div>
+        <div class="row"><label for="email">Email:</label><input id="email" type="email" placeholder="Enter your Email"></div>
+        <div class="row"><label for="number">Number:</label><input id="number" type="tel" placeholder="Enter your Number"></div>
+
+        <p class="gender-title">Please select your gender:</p>
+        <label class="choice"><input type="radio" name="gender" value="male"> Male</label>
+        <label class="choice"><input type="radio" name="gender" value="female" checked> Female</label>
+        <label class="choice"><input type="radio" name="gender" value="non-binary"> Non-binary</label>
+        <label class="choice"><input type="radio" name="gender" value="prefer-not"> Prefer not to say</label>
+      </fieldset>
+
+      <fieldset class="additional">
+        <legend>Additional Information</legend>
+        <label for="background">Enter Your Background Information</label>
+        <textarea id="background" placeholder="Enter Your Background Information"></textarea>
+      </fieldset>
+      <button type="submit">submit</button>
+    </form>
+  </main>
+</body>
+</html>
